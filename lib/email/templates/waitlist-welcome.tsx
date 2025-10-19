@@ -66,22 +66,25 @@ display: inline-block;
           <p>Hi there,</p>
 
           <p>
-            Thanks for joining the ProofFlow.ai waitlist! You're now part of an
-            exclusive group that will get early access to our AI-powered case
-            study generator.
+            Thanks for joining the ProofFlow.ai waitlist! You&apos;re now part
+            of an exclusive group that will get early access to our AI-powered
+            case study generator.
           </p>
 
           <div className="highlight">
             <h3>What happens next?</h3>
             <ul>
               <li>
-                We're building in public, so you'll get regular updates on our
-                progress
+                We&apos;re building in public, so you&apos;ll get regular
+                updates on our progress
               </li>
               <li>
-                You'll be among the first to try ProofFlow.ai when we launch
+                You&apos;ll be among the first to try ProofFlow.ai when we
+                launch
               </li>
-              <li>We'll share exclusive insights and early-bird pricing</li>
+              <li>
+                We&apos;ll share exclusive insights and early-bird pricing
+              </li>
             </ul>
           </div>
 
@@ -104,7 +107,7 @@ display: inline-block;
           </p>
 
           <p>
-            Thanks for believing in what we're building,
+            Thanks for believing in what we&apos;re building,
             <br />
             <strong>The ProofFlow.ai Team</strong>
           </p>

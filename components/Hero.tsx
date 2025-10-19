@@ -140,7 +140,7 @@ export default function Hero() {
                 <CheckCircle className="w-5 h-5" />
                 <p className="font-semibold text-lg">
                   {/* Fixed bolding */}
-                  Success! You've secured your spot.{" "}
+                  Success! You&apos;ve secured your spot.{" "}
                   <strong className="text-green-200">
                     Check your inbox
                   </strong>{" "}
