@@ -4,13 +4,17 @@ import { useState } from "react";
 import { CheckCircle, Loader2, Twitter } from "lucide-react";
 import Image from "next/image"; // Re-imported Image
 
-export default function Hero() {
+type HeroProps = {
+  waitlistCount: number;
+};
+
+export default function Hero({ waitlistCount }: HeroProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [waitlistCount, setWaitlistCount] = useState(300);
+  const [count, setCount] = useState(waitlistCount); // ✅ use initial value from server
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -53,7 +57,7 @@ export default function Hero() {
 
       setStatus("success");
       setEmail("");
-      setWaitlistCount((prev) => prev + 1);
+      setCount((prev) => prev + 1);
     } catch (error) {
       setStatus("error");
       setErrorMessage(
@@ -167,7 +171,7 @@ export default function Hero() {
           </div>
           <p className="text-white/70 text-base font-medium">
             <span className="text-white font-extrabold">
-              {waitlistCount.toLocaleString()}+
+              {count.toLocaleString()}+
             </span>{" "}
             users in line for early access.
           </p>
