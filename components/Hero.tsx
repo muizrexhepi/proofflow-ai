@@ -181,7 +181,7 @@ export default function Hero({ waitlistCount }: HeroProps) {
       <footer className="relative z-10 py-6">
         <div className="flex items-center justify-center">
           <a
-            href="https://twitter.com/muiz_rexhpepi"
+            href="https://twitter.com/muiz_rexhepi"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/40 hover:text-white transition-colors flex items-center space-x-2 group"
