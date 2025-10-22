@@ -1,82 +1,26 @@
-import { Inter, Lora } from "next/font/google";
+import type React from "react";
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-lora",
-  weight: ["400", "600", "700"],
-});
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://proofflow.ai"),
-  title: {
-    default: "ProofFlow.ai | Turn Customer Interviews into Case Studies",
-    template: "%s | ProofFlow.ai",
-  },
+  title: "Casevia - Turn Client Interviews Into Polished Case Studies",
   description:
-    "Upload a customer interview and get a polished case study with quotes and narrative in minutes. AI-powered, simple, and fast.",
-  keywords: [
-    "case study generator",
-    "AI case studies",
-    "customer testimonials",
-    "case study automation",
-    "video to case study",
-    "customer success stories",
-    "B2B marketing",
-    "testimonial automation",
-  ],
-  authors: [{ name: "ProofFlow.ai" }],
-  creator: "ProofFlow.ai",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://proofflow.ai",
-    siteName: "ProofFlow.ai",
-    title: "ProofFlow.ai | Turn Customer Interviews into Case Studies",
-    description:
-      "Upload a customer interview and get a polished case study with quotes and narrative in minutes.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ProofFlow.ai - AI-Powered Case Study Generator",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ProofFlow.ai | Turn Customer Interviews into Case Studies",
-    description:
-      "Upload a customer interview and get a polished case study in minutes.",
-    images: ["/og-image.png"],
-    creator: "@muiz_rexhpepi",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
+    "AI-powered platform that converts client interviews and meeting recordings into professional case studies and social media content in minutes.",
+  generator: "v0.app",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={`font-sans antialiased`}>{children}</body>
     </html>
   );
 }
