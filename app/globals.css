@@ -42,7 +42,7 @@
 
 .dark {
   /* Pure black background with subtle gray accents matching Linear */
-  --background: hsl(0, 0%, 0%);
+  --background: oklch(0.139 0.0029 246.26);
   --foreground: hsl(0, 0%, 98%);
   /* Updated card color to match Linear's #141516 */
   --card: #141516;

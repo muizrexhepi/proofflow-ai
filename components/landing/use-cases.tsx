@@ -34,7 +34,7 @@ const useCases = [
 
 export function UseCases() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-white/10 to-background">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-[#141516] to-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight lg:text-5xl">

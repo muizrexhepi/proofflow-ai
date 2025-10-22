@@ -93,7 +93,7 @@ export function PricingCards() {
           key={index}
           className={`relative rounded-lg border p-8 bg-card transition-all ${
             plan.popular
-              ? "border-white/20 shadow-2xl ring-1 ring-white/10"
+              ? "border-white/20 shadow-2xl ring-1 ring-[#141516]"
               : "border-border"
           }`}
         >

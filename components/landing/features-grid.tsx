@@ -60,12 +60,12 @@ export function FeaturesGrid() {
   ];
 
   return (
-    <section id="features" className="py-20 lg:py-32">
+    <section id="features">
       <div className="space-y-px">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-white/10 to-background"
+            className="bg-gradient-to-b from-[#141516] via-background to-background"
           >
             <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-24">
               {/* Main Feature Header */}
@@ -85,7 +85,7 @@ export function FeaturesGrid() {
               {/* Main Illustration Skeleton */}
               <div className="mb-12">
                 <div className="overflow-hidden rounded-lg border border-border bg-card shadow-2xl">
-                  <div className="aspect-[16/10] bg-gradient-to-br from-muted/50 to-muted animate-pulse">
+                  <div className="aspect-[16/10] bg-gradient-to-br from-muted/50 to-muted">
                     <div className="h-full w-full flex items-center justify-center">
                       <div className="text-center space-y-4 p-8">
                         <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto" />
@@ -97,21 +97,20 @@ export function FeaturesGrid() {
                 </div>
               </div>
 
-              {/* Sub-features Grid with Connected Borders */}
               <div className="border-t border-border">
                 <div className="grid md:grid-cols-2">
                   {feature.subFeatures.map((subFeature, subIndex) => (
                     <div
                       key={subIndex}
                       className={`
-                        p-8 space-y-6
-                        ${subIndex % 2 === 1 ? "md:border-l border-border" : ""}
+                        md:p-8 py-8 space-y-6 md:pl-0
+                        ${subIndex % 2 === 1 ? "md:border-l md:pr-0 md:pl-8 border-border" : ""}
                         ${subIndex >= 2 ? "border-t border-border" : ""}
                       `}
                     >
                       {/* Sub-feature Text */}
                       <div>
-                        <h4 className="mb-2 text-lg font-semibold">
+                        <h4 className="mb-2 text-2xl font-semibold">
                           {subFeature.title}
                         </h4>
                         <p className="text-sm leading-relaxed text-muted-foreground">
