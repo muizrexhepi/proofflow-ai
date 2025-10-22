@@ -27,14 +27,6 @@ export default function PricingPage() {
         </section>
 
         <section className="py-20 lg:py-32">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight lg:text-4xl">
-              Compare all features
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              See exactly what's included in each plan
-            </p>
-          </div>
           <ComparisonTable />
         </section>
 

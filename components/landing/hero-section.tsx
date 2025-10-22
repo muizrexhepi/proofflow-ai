@@ -19,7 +19,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           {/* Main headline */}
-          <h1 className="text-5xl font-bold tracking-tight lg:text-7xl leading-[1.1] mb-6">
+          <h1 className="text-5xl font-semibold lg:text-6xl leading-[1.1] mb-6">
             Turn client interviews into polished case studies
           </h1>
 

@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
+import React from "react";
 import { Check } from "lucide-react";
-import Link from "next/link";
 
 const plans = [
   {
@@ -92,22 +91,24 @@ export function PricingCards() {
       {plans.map((plan, index) => (
         <div
           key={index}
-          className={`relative rounded-2xl border p-8 bg-card transition-all ${
-            plan.popular ? "border-white/20 shadow-lg" : "border-border"
+          className={`relative rounded-lg border p-8 bg-card transition-all ${
+            plan.popular
+              ? "border-white/20 shadow-2xl ring-1 ring-white/10"
+              : "border-border"
           }`}
         >
           {plan.popular && (
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span className="rounded-full bg-white text-black px-3 py-1 text-xs font-semibold">
+              <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
                 Most popular
               </span>
             </div>
           )}
 
           <div className="mb-8">
-            <h3 className="mb-2 text-2xl font-semibold">{plan.name}</h3>
+            <h3 className="mb-2 text-xl font-semibold">{plan.name}</h3>
             <div className="mb-2 flex items-baseline gap-1">
-              <span className="text-5xl font-bold">{plan.price}</span>
+              <span className="text-4xl font-bold">{plan.price}</span>
               {plan.price !== "$0" && (
                 <span className="text-muted-foreground text-sm">/month</span>
               )}
@@ -115,18 +116,20 @@ export function PricingCards() {
             <p className="text-sm text-muted-foreground">{plan.description}</p>
           </div>
 
-          <Button
-            className={`mb-8 w-full ${plan.popular ? "bg-white text-black hover:bg-white/90" : "bg-transparent border-border hover:bg-accent"}`}
-            variant={plan.popular ? "default" : "outline"}
-            asChild
+          <button
+            className={`mb-8 w-full rounded-md px-4 py-2.5 text-sm font-semibold transition-colors ${
+              plan.popular
+                ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                : "border border-border bg-transparent hover:bg-accent"
+            }`}
           >
-            <Link href={plan.href}>{plan.cta}</Link>
-          </Button>
+            {plan.cta}
+          </button>
 
-          <ul className="space-y-4">
+          <ul className="space-y-3">
             {plan.features.map((feature, featureIndex) => (
               <li key={featureIndex} className="flex items-start gap-3 text-sm">
-                <Check className="h-4 w-4 shrink-0 text-white mt-0.5" />
+                <Check className="h-4 w-4 shrink-0 text-primary mt-0.5" />
                 <span className="text-muted-foreground leading-relaxed">
                   {feature}
                 </span>
@@ -138,3 +141,5 @@ export function PricingCards() {
     </div>
   );
 }
+
+export default PricingCards;

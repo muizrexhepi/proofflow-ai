@@ -1,3 +1,5 @@
+import React from "react";
+
 export function FeaturesGrid() {
   const features = [
     {
@@ -8,20 +10,12 @@ export function FeaturesGrid() {
       illustration: "/placeholder.svg?height=500&width=700",
       subFeatures: [
         {
-          label: "Automatic speaker detection",
+          title: "Automatic speaker detection",
           description: "Identifies and labels different speakers automatically",
         },
         {
-          label: "50+ language support",
+          title: "50+ language support",
           description: "Transcribe interviews in any major language",
-        },
-        {
-          label: "Timestamp generation",
-          description: "Every quote is timestamped for easy reference",
-        },
-        {
-          label: "Custom vocabulary",
-          description: "Train the AI on industry-specific terms",
         },
       ],
     },
@@ -33,20 +27,14 @@ export function FeaturesGrid() {
       illustration: "/placeholder.svg?height=500&width=700",
       subFeatures: [
         {
-          label: "Narrative extraction",
-          description: "Automatically identifies the story arc and key moments",
+          title: "Narrative extraction",
+          description:
+            "Automatically identifies the story arc and key moments that resonate with your audience",
         },
         {
-          label: "Metrics identification",
-          description: "Pulls out ROI, growth stats, and success metrics",
-        },
-        {
-          label: "Quote highlighting",
-          description: "Finds the most impactful customer quotes",
-        },
-        {
-          label: "SEO optimization",
-          description: "Generates SEO-friendly titles and meta descriptions",
+          title: "Metrics identification",
+          description:
+            "Pulls out ROI, growth stats, and success metrics to strengthen your case studies",
         },
       ],
     },
@@ -58,131 +46,93 @@ export function FeaturesGrid() {
       illustration: "/placeholder.svg?height=500&width=700",
       subFeatures: [
         {
-          label: "PDF case studies",
-          description: "Professional, branded case study documents",
+          title: "PDF case studies",
+          description:
+            "Professional, branded case study documents with custom layouts and your company branding",
         },
         {
-          label: "Social media posts",
-          description: "LinkedIn, Twitter, and Instagram-ready content",
-        },
-        {
-          label: "Website embeds",
-          description: "Responsive case study widgets for your site",
-        },
-        {
-          label: "Email templates",
-          description: "Ready-to-send customer success emails",
+          title: "Social media posts",
+          description:
+            "LinkedIn, Twitter, and Instagram-ready content optimized for maximum engagement",
         },
       ],
     },
   ];
 
   return (
-    <section
-      id="features"
-      className="py-20 lg:py-32 bg-gradient-to-b from-white/10 to-background"
-    >
-      <div className="mb-20 mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="mb-4 text-4xl font-bold tracking-tight lg:text-5xl">
-          Everything you need to showcase success
-        </h2>
-        <p className="max-w-2xl text-lg text-muted-foreground">
-          Powerful features that transform raw interviews into marketing gold
-        </p>
-      </div>
-
+    <section id="features" className="py-20 lg:py-32">
       <div className="space-y-px">
         {features.map((feature, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="bg-gradient-to-b from-white/10 to-background"
+          >
             <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-24">
-              <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-                {index % 2 === 0 ? (
-                  <>
-                    {/* Text on left */}
-                    <div>
-                      <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        {feature.tag}
-                      </div>
-                      <h3 className="mb-4 text-3xl font-bold lg:text-4xl">
-                        {feature.title}
-                      </h3>
-                      <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-                        {feature.description}
-                      </p>
+              {/* Main Feature Header */}
+              <div className="mb-12 max-w-3xl">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  {feature.tag}
+                </div>
+                <h3 className="mb-4 text-3xl font-bold lg:text-5xl tracking-tight">
+                  {feature.title}
+                </h3>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  {feature.description}
+                </p>
+              </div>
 
-                      <div className="space-y-4">
-                        {feature.subFeatures.map((subFeature, subIndex) => (
-                          <div key={subIndex} className="flex gap-3">
-                            <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                            <div>
-                              <h4 className="mb-1 text-sm font-semibold">
-                                {subFeature.label}
-                              </h4>
-                              <p className="text-sm leading-relaxed text-muted-foreground">
-                                {subFeature.description}
-                              </p>
+              {/* Main Illustration Skeleton */}
+              <div className="mb-12">
+                <div className="overflow-hidden rounded-lg border border-border bg-card shadow-2xl">
+                  <div className="aspect-[16/10] bg-gradient-to-br from-muted/50 to-muted animate-pulse">
+                    <div className="h-full w-full flex items-center justify-center">
+                      <div className="text-center space-y-4 p-8">
+                        <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto" />
+                        <div className="h-4 w-48 bg-muted-foreground/20 rounded mx-auto" />
+                        <div className="h-3 w-64 bg-muted-foreground/10 rounded mx-auto" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sub-features Grid with Connected Borders */}
+              <div className="border-t border-border">
+                <div className="grid md:grid-cols-2">
+                  {feature.subFeatures.map((subFeature, subIndex) => (
+                    <div
+                      key={subIndex}
+                      className={`
+                        p-8 space-y-6
+                        ${subIndex % 2 === 1 ? "md:border-l border-border" : ""}
+                        ${subIndex >= 2 ? "border-t border-border" : ""}
+                      `}
+                    >
+                      {/* Sub-feature Text */}
+                      <div>
+                        <h4 className="mb-2 text-lg font-semibold">
+                          {subFeature.title}
+                        </h4>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {subFeature.description}
+                        </p>
+                      </div>
+
+                      {/* Sub-feature Illustration Skeleton */}
+                      <div className="overflow-hidden rounded-lg border border-border bg-card">
+                        <div className="aspect-[4/3] bg-gradient-to-br from-muted/30 to-muted/50 animate-pulse">
+                          <div className="h-full w-full flex items-center justify-center p-6">
+                            <div className="text-center space-y-3">
+                              <div className="w-12 h-12 bg-primary/10 rounded mx-auto" />
+                              <div className="h-2 w-32 bg-muted-foreground/10 rounded mx-auto" />
                             </div>
                           </div>
-                        ))}
+                        </div>
                       </div>
                     </div>
-
-                    {/* Image on right */}
-                    <div className="flex items-center">
-                      <div className="overflow-hidden rounded-lg border border-border bg-background shadow-xl">
-                        <img
-                          src={feature.illustration || "/placeholder.svg"}
-                          alt={feature.title}
-                          className="h-auto w-full"
-                        />
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    {/* Image on left */}
-                    <div className="flex items-center">
-                      <div className="overflow-hidden rounded-lg border border-border bg-background shadow-xl">
-                        <img
-                          src={feature.illustration || "/placeholder.svg"}
-                          alt={feature.title}
-                          className="h-auto w-full"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Text on right */}
-                    <div>
-                      <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        {feature.tag}
-                      </div>
-                      <h3 className="mb-4 text-3xl font-bold lg:text-4xl">
-                        {feature.title}
-                      </h3>
-                      <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-                        {feature.description}
-                      </p>
-
-                      <div className="space-y-4">
-                        {feature.subFeatures.map((subFeature, subIndex) => (
-                          <div key={subIndex} className="flex gap-3">
-                            <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                            <div>
-                              <h4 className="mb-1 text-sm font-semibold">
-                                {subFeature.label}
-                              </h4>
-                              <p className="text-sm leading-relaxed text-muted-foreground">
-                                {subFeature.description}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                )}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -191,3 +141,5 @@ export function FeaturesGrid() {
     </section>
   );
 }
+
+export default FeaturesGrid;

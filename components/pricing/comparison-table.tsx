@@ -116,26 +116,26 @@ export function ComparisonTable() {
   }, []);
 
   return (
-    <div id="comparison-table" className="relative bg-black">
+    <div id="comparison-table" className="relative bg-background">
       <div
-        className={`${isSticky ? "sticky top-16 z-40 bg-black border-b border-border/30" : ""} transition-all duration-200`}
+        className={`${isSticky ? "sticky top-16 z-40 bg-background border-b border-border/30" : ""} transition-all duration-200`}
       >
         <div className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
-          <div className="grid grid-cols-5 gap-4 text-center">
+          <div className="grid grid-cols-5 text-center">
             <div className="text-left">
-              <span className="text-sm font-semibold">Features</span>
+              <span className="text-lg font-semibold sr-only ">Features</span>
             </div>
             <div>
-              <span className="text-sm font-semibold">Free</span>
+              <span className="text-lg font-semibold">Free</span>
             </div>
             <div>
-              <span className="text-sm font-semibold">Starter</span>
+              <span className="text-lg font-semibold">Starter</span>
+            </div>
+            <div className="bg-white/5">
+              <span className="text-lg font-semibold">Pro</span>
             </div>
             <div>
-              <span className="text-sm font-semibold">Pro</span>
-            </div>
-            <div>
-              <span className="text-sm font-semibold">Agency</span>
+              <span className="text-lg font-semibold">Agency</span>
             </div>
           </div>
         </div>
@@ -145,16 +145,16 @@ export function ComparisonTable() {
         {features.map((category, categoryIndex) => (
           <div key={categoryIndex} className="mb-12">
             <h3 className="mb-6 text-lg font-semibold">{category.category}</h3>
-            <div className="space-y-0">
+            <div>
               {category.items.map((item, itemIndex) => (
                 <div
                   key={itemIndex}
-                  className="grid grid-cols-5 gap-4 border-t border-border/20 p-4 text-sm first:border-t hover:bg-white/5 transition-colors"
+                  className="grid grid-cols-5 border-t border-border/50 text-sm hover:bg-white/5 transition-colors"
                 >
-                  <div className="flex items-center font-medium">
+                  <div className="flex items-center font-medium py-4">
                     {item.name}
                   </div>
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center py-4">
                     {typeof item.free === "boolean" ? (
                       item.free ? (
                         <Check className="h-5 w-5 text-primary" />
@@ -165,7 +165,7 @@ export function ComparisonTable() {
                       <span className="text-muted-foreground">{item.free}</span>
                     )}
                   </div>
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center py-4">
                     {typeof item.starter === "boolean" ? (
                       item.starter ? (
                         <Check className="h-5 w-5 text-primary" />
@@ -178,10 +178,10 @@ export function ComparisonTable() {
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center py-4 bg-white/5">
                     {typeof item.pro === "boolean" ? (
                       item.pro ? (
-                        <Check className="h-5 w-5 text-primary" />
+                        <Check className="h-5 w-5 text-blue-400" />
                       ) : (
                         <X className="h-5 w-5 text-muted-foreground/40" />
                       )
@@ -189,7 +189,7 @@ export function ComparisonTable() {
                       <span className="text-muted-foreground">{item.pro}</span>
                     )}
                   </div>
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center py-4">
                     {typeof item.agency === "boolean" ? (
                       item.agency ? (
                         <Check className="h-5 w-5 text-primary" />
@@ -211,3 +211,5 @@ export function ComparisonTable() {
     </div>
   );
 }
+
+export default ComparisonTable;
