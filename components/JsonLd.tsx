@@ -2,7 +2,7 @@ export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "ProofFlow.ai",
+    name: "Casevia",
     applicationCategory: "BusinessApplication",
     description:
       "AI-powered case study generator that transforms customer interviews into compelling case studies",

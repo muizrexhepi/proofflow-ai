@@ -60,15 +60,15 @@ display: inline-block;
     <body>
       <div className="container">
         <div className="header">
-          <h1>Welcome to ProofFlow.ai! 🎉</h1>
+          <h1>Welcome to Casevia! 🎉</h1>
         </div>
         <div className="content">
           <p>Hi there,</p>
 
           <p>
-            Thanks for joining the ProofFlow.ai waitlist! You&apos;re now part
-            of an exclusive group that will get early access to our AI-powered
-            case study generator.
+            Thanks for joining the Casevia waitlist! You&apos;re now part of an
+            exclusive group that will get early access to our AI-powered case
+            study generator.
           </p>
 
           <div className="highlight">
@@ -79,8 +79,7 @@ display: inline-block;
                 updates on our progress
               </li>
               <li>
-                You&apos;ll be among the first to try ProofFlow.ai when we
-                launch
+                You&apos;ll be among the first to try Casevia when we launch
               </li>
               <li>
                 We&apos;ll share exclusive insights and early-bird pricing
@@ -92,7 +91,7 @@ display: inline-block;
             <strong>Want to stay even more connected?</strong>
             <br />
             Follow our journey on X (Twitter) where I share daily updates,
-            challenges, and lessons learned while building ProofFlow.ai.
+            challenges, and lessons learned while building Casevia.
           </p>
 
           <center>
@@ -109,15 +108,15 @@ display: inline-block;
           <p>
             Thanks for believing in what we&apos;re building,
             <br />
-            <strong>The ProofFlow.ai Team</strong>
+            <strong>The Casevia Team</strong>
           </p>
         </div>
         <div className="footer">
           <p>
-            You received this email because you signed up for the ProofFlow.ai
+            You received this email because you signed up for the Casevia
             waitlist with {email}.
           </p>
-          <p>&copy; 2025 ProofFlow.ai. All rights reserved.</p>
+          <p>&copy; 2025 Casevia. All rights reserved.</p>
         </div>
       </div>
     </body>

@@ -9,9 +9,9 @@ export async function sendWaitlistEmail(email: string) {
     const emailHtml = await render(await WaitlistWelcomeEmail({ email }));
 
     const { data, error } = await resend.emails.send({
-      from: "ProofFlow.ai <onboarding@muizrexhepi.com>",
+      from: "Casevia <onboarding@muizrexhepi.com>",
       to: [email],
-      subject: "Welcome to the ProofFlow.ai Waitlist! 🚀",
+      subject: "Welcome to the Casevia Waitlist! 🚀",
       html: emailHtml,
     });
 
